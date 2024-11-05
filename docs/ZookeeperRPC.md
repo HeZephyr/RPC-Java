@@ -27,7 +27,7 @@ The architecture of the ZookeeperRPC framework includes:
 ### 3. Core Components
 
 #### 3.1 `ServiceProvider`
-Located at: `src/main/java/rpc/zookeeper/server/provider/ServiceProvider.java`
+Located at: `src/main/java/rpc/v1/zookeeper/server/provider/ServiceProvider.java`
 
 - **Purpose**: Manages service instances and registers them with ZooKeeper for discovery by clients.
 - **Key Methods**:
@@ -35,7 +35,7 @@ Located at: `src/main/java/rpc/zookeeper/server/provider/ServiceProvider.java`
     - `getService`: Retrieves the service instance by the interface name, used for client requests.
 
 #### 3.2 `ZKServiceRegister`
-Located at: `src/main/java/rpc/zookeeper/server/register/impl/ZKServiceRegister.java`
+Located at: `src/main/java/rpc/v1/zookeeper/server/register/impl/ZKServiceRegister.java`
 
 - **Purpose**: Handles the ZooKeeper connection and manages the creation of nodes for service registration.
 - **Key Methods**:
@@ -43,7 +43,7 @@ Located at: `src/main/java/rpc/zookeeper/server/register/impl/ZKServiceRegister.
     - `init`: Initializes the connection to the ZooKeeper server and prepares the root path for service registration.
 
 #### 3.3 `ZKServiceDiscovery`
-Located at: `src/main/java/rpc/zookeeper/client/discovery/impl/ZKServiceDiscovery.java`
+Located at: `src/main/java/rpc/v1/zookeeper/client/discovery/impl/ZKServiceDiscovery.java`
 
 - **Purpose**: Allows clients to look up available services by querying ZooKeeper for service instances.
 - **Key Methods**:
