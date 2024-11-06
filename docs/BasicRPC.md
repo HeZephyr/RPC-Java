@@ -27,7 +27,7 @@ The system follows a client-server architecture:
 ### 3. Core Components
 
 #### 3.1 `ClientProxy`
-Located at: `src/main/java/rpc/basic/client/proxy/ClientProxy.java`
+Located at: `src/main/java/rpc/v1/basic/client/proxy/ClientProxy.java`
 
 - **Purpose**: Acts as a dynamic proxy on the client side, intercepting calls to interface methods, creating `RpcRequest` objects, and sending them to the server.
 - **Key Methods**:
@@ -35,13 +35,13 @@ Located at: `src/main/java/rpc/basic/client/proxy/ClientProxy.java`
    - `getProxy`: Creates a proxy instance for the specified interface, allowing the client to call methods as if they were local.
 
 #### 3.2 `RpcRequest` and `RpcResponse`
-Located at: `src/main/java/rpc/basic/common/message`
+Located at: `src/main/java/rpc/v1/basic/common/message`
 
 - **`RpcRequest`**: Encapsulates details of the method being called, including interface name, method name, parameter types, and arguments.
 - **`RpcResponse`**: Encapsulates the result of the method call, including any returned data or error status.
 
 #### 3.3 `ThreadPoolRpcServer`
-Located at: `src/main/java/rpc/basic/server/impl/ThreadPoolRpcServer.java`
+Located at: `src/main/java/rpc/v1/basic/server/impl/ThreadPoolRpcServer.java`
 
 `ThreadPoolRpcServer` is the main server component that uses a thread pool to handle client requests concurrently:
 - **Service Provider**: Holds references to server-side implementations of interfaces, allowing the server to invoke the correct service.
@@ -49,7 +49,7 @@ Located at: `src/main/java/rpc/basic/server/impl/ThreadPoolRpcServer.java`
 - **Server Socket**: Listens for incoming client connections and passes them to the thread pool for processing.
 
 #### 3.4 `WorkerThread`
-Located at: `src/main/java/rpc/basic/server/work/WorkerThread.java`
+Located at: `src/main/java/rpc/v1/basic/server/work/WorkerThread.java`
 
 Each `WorkerThread`:
 - Reads an `RpcRequest` from the client.

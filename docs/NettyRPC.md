@@ -27,7 +27,7 @@ The architecture of NettyRPC includes:
 ### 3. Core Components
 
 #### 3.1 `ClientProxy`
-Located at: `src/main/java/rpc/netty/client/proxy/ClientProxy.java`
+Located at: `src/main/java/rpc/v1/netty/client/proxy/ClientProxy.java`
 
 - **Purpose**: Acts as a dynamic proxy for client-side interface calls, intercepting method calls and creating `RpcRequest` objects that are sent to the server.
 - **Key Methods**:
@@ -35,13 +35,13 @@ Located at: `src/main/java/rpc/netty/client/proxy/ClientProxy.java`
     - `getProxy`: Generates a proxy instance for the specified interface, allowing seamless client-side method calls.
 
 #### 3.2 `RpcRequest` and `RpcResponse`
-Located at: `src/main/java/rpc/netty/common/message`
+Located at: `src/main/java/rpc/v1/netty/common/message`
 
 - **`RpcRequest`**: Contains information about the method being invoked, including the interface name, method name, parameter types, and parameters.
 - **`RpcResponse`**: Holds the result of the invoked method, including return data or an error message if an issue occurred.
 
 #### 3.3 `NettyRpcServer`
-Located at: `src/main/java/rpc/netty/server/impl/NettyRpcServer.java`
+Located at: `src/main/java/rpc/v1/netty/server/impl/NettyRpcServer.java`
 
 The `NettyRpcServer` is the main server component. It uses:
 - **Service Provider**: Manages available services by storing references to service implementations, allowing the server to locate and invoke the appropriate service.
@@ -49,7 +49,7 @@ The `NettyRpcServer` is the main server component. It uses:
 - **Thread Pool**: Processes requests concurrently, managing resource use and enhancing scalability.
 
 #### 3.4 `NettyServerHandler`
-Located at: `src/main/java/rpc/netty/server/netty/handler/NettyServerHandler.java`
+Located at: `src/main/java/rpc/v1/netty/server/netty/handler/NettyServerHandler.java`
 
 The `NettyServerHandler`:
 - Deserializes incoming `RpcRequest` objects.
@@ -57,7 +57,7 @@ The `NettyServerHandler`:
 - Packages the result in an `RpcResponse` object and sends it back to the client.
 
 #### 3.5 Kryo Encoder and Decoder
-Located at: `src/main/java/rpc/netty/common/codec`
+Located at: `src/main/java/rpc/v1/netty/common/codec`
 
 The custom **KryoEncoder** and **KryoDecoder** are responsible for:
 - Serializing `RpcRequest` and `RpcResponse` objects using Kryo.

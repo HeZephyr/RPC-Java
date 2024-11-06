@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package rpc.custom.common.message;
+
+// RpcRequest message definition
+message RpcRequest {
+  string interfaceName = 1;        // The name of the interface to be invoked
+  string methodName = 2;           // The name of the method to be invoked
+  repeated bytes parameters = 3;   // Serialized parameters as bytes
+  repeated string paramTypes = 4;  // Parameter types as class names
+}
+
+// RpcResponse message definition
+message RpcResponse {
+  int32 code = 1;                  // Response status code
+  string message = 2;              // Response message
+  bytes data = 3;                  // Serialized data as bytes
+  string dataType = 4;             // Class name of the data type
+}
