@@ -1,10 +1,10 @@
-package rpc.v4;
+package rpc.v4.circuitbreaker;
 
-import rpc.v4.limiter.common.service.UserService;
-import rpc.v4.limiter.common.service.impl.UserServiceImpl;
-import rpc.v4.limiter.server.RpcServer;
-import rpc.v4.limiter.server.impl.NettyRpcServer;
-import rpc.v4.limiter.server.provider.ServiceProvider;
+import rpc.v4.circuitbreaker.common.service.UserService;
+import rpc.v4.circuitbreaker.common.service.impl.UserServiceImpl;
+import rpc.v4.circuitbreaker.server.RpcServer;
+import rpc.v4.circuitbreaker.server.impl.NettyRpcServer;
+import rpc.v4.circuitbreaker.server.provider.ServiceProvider;
 
 public class TestServer {
 

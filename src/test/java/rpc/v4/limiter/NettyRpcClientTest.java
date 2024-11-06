@@ -1,4 +1,4 @@
-package rpc.v4;
+package rpc.v4.limiter;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
